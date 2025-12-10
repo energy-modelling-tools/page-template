@@ -1,0 +1,56 @@
+<script>
+  function fallbackImage(img) {
+    var formats = ['jpg', 'png', 'jpeg', 'svg', 'webp'];
+    var src = img.src;
+    // Extract extension, ignoring query parameters
+    var currentExt = src.substring(src.lastIndexOf('.') + 1).split('?')[0].toLowerCase();
+    
+    if (!img.dataset.tried) {
+      img.dataset.tried = currentExt;
+    }
+    
+    var tried = img.dataset.tried.split(',');
+    var nextFormat = formats.find(function(fmt) {
+      return tried.indexOf(fmt) === -1;
+    });
+    
+    if (nextFormat) {
+      img.dataset.tried += ',' + nextFormat;
+      var newSrc = src.substring(0, src.lastIndexOf('.')) + '.' + nextFormat;
+      img.src = newSrc;
+    } else {
+      img.onerror = null; 
+      img.style.opacity = '0.5'; 
+      img.alt = 'Image not found';
+    }
+  }
+</script>
+
+<div class="clearfix gutter-spacious">
+  {% for event in site.data.learning_events.events %}
+  <div class="col-md-4 float-left animate-in mb-4">
+    <h3 class="alt-h3 mb-3">{{ event.title }}</h3>
+    <p><a href="{{ event.url | default: '#' }}" target="_blank">
+      <img src="{{ event.image | relative_url }}" class="img-fluid animate-in" alt="{{ event.alt }}" onerror="fallbackImage(this)"/></a>
+    </p>
+    <p class="text-gray">{{ event.description }}</p>
+    <details>
+      <summary class="btn btn-sm btn-outline toggle-arrow">Show Outputs</summary>
+      <ul class="mt-2">
+        {% for output in event.outputs %}
+        <li>{{ output.flag }} <strong>{{ output.country }}</strong>: <a href="{{ output.url }}" target="_blank">{{ output.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% if event.links %}
+      <p class="mt-2"><strong>Related Links:</strong></p>
+      <ul class="mt-1">
+        {% for link in event.links %}
+          <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
