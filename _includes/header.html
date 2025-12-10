@@ -22,10 +22,12 @@
         <!-- Logo and title row -->
         <div class="header-top">
           <div class="logo-container">
-            <a href="{{ "/" | relative_url}}"><img class="logo py-3" src="{{ "/assets/img/MAED_Logo.png" | relative_url}}" alt="FFRM"></a>
+            {% if site.logo %}
+            <a href="{{ "/" | relative_url}}"><img class="logo py-3" src="{{ site.logo | relative_url}}" alt="{{ site.title }}"></a>
+            {% endif %}
           </div>
           <div class="title-container">
-            <a href="{{ "/" | relative_url}}" style="font-size: 2.5em; font-weight: bold;">MAED</a>
+            <a href="{{ "/" | relative_url}}" style="font-size: 2.5em; font-weight: bold;">{{ site.title }}</a>
           </div>
           <!-- Mobile menu toggle -->
           <div class="mobile-menu-toggle d-md-none">
