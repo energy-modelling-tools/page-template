@@ -15180,12 +15180,14 @@ body {
 @media (max-width: 768px) {
   .page-header .header-layout {
     min-height: auto;
+    --mobile-menu-height: 0px;
     padding: 1rem 0 2rem 0;
   }
 }
 @media (max-width: 768px) {
   .page-header .header-layout.menu-expanded {
-    padding-bottom: 14rem;
+    /* JS measures the dropdown and stores it in --mobile-menu-height */
+    padding-bottom: calc(2rem + var(--mobile-menu-height, 0px));
   }
 }
 @media (max-width: 768px) {

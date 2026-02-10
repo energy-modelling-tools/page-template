@@ -14,6 +14,23 @@
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const headerLayout = document.querySelector('.header-layout');
+        const mobileNavigation = document.querySelector('.mobile-navigation');
+
+        function setMobileMenuHeightVar() {
+          if (!headerLayout || !mobileNavigation) return;
+          // Only relevant for mobile layout where the dropdown exists.
+          if (window.matchMedia && !window.matchMedia('(max-width: 768px)').matches) {
+            headerLayout.style.removeProperty('--mobile-menu-height');
+            return;
+          }
+          // menu-open is on the toggle container.
+          if (!mobileMenuToggle || !mobileMenuToggle.classList.contains('menu-open')) {
+            headerLayout.style.setProperty('--mobile-menu-height', '0px');
+            return;
+          }
+          // Use scrollHeight to include all list items.
+          headerLayout.style.setProperty('--mobile-menu-height', mobileNavigation.scrollHeight + 'px');
+        }
         
         if (mobileMenuBtn && mobileMenuToggle && headerLayout) {
           mobileMenuBtn.addEventListener('click', function() {
@@ -24,11 +41,14 @@
               mobileMenuToggle.classList.remove('menu-open');
               headerLayout.classList.remove('menu-expanded');
               mobileMenuBtn.setAttribute('aria-expanded', 'false');
+              setMobileMenuHeightVar();
             } else {
               // 打开菜单
               mobileMenuToggle.classList.add('menu-open');
               headerLayout.classList.add('menu-expanded');
               mobileMenuBtn.setAttribute('aria-expanded', 'true');
+              // Let layout update before measuring.
+              requestAnimationFrame(setMobileMenuHeightVar);
             }
           });
           
@@ -38,8 +58,17 @@
               mobileMenuToggle.classList.remove('menu-open');
               headerLayout.classList.remove('menu-expanded');
               mobileMenuBtn.setAttribute('aria-expanded', 'false');
+              setMobileMenuHeightVar();
             }
           });
+
+          window.addEventListener('resize', function() {
+            // Recompute when viewport changes, e.g. rotation.
+            setMobileMenuHeightVar();
+          });
+
+          // Initialize.
+          setMobileMenuHeightVar();
         }
       });
     </script>
