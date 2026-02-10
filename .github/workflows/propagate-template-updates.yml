@@ -10,7 +10,8 @@ permissions:
 jobs:
   dispatch:
     runs-on: ubuntu-latest
-    if: github.repository == 'energy-modeling-tools/page-template'
+    # Accept either org spelling (repository moved)
+    if: github.repository == 'energy-modeling-tools/page-template' || github.repository == 'energy-modelling-tools/page-template'
     steps:
       - name: Generate GitHub App token
         id: app-token
@@ -31,17 +32,18 @@ jobs:
           fi
 
           repos=(
-            energy-modeling-tools/energy-modeling-tools.github.io
-            energy-modeling-tools/maed2
-            energy-modeling-tools/onsset
-            energy-modeling-tools/ffrm
-            energy-modeling-tools/finplan
-            energy-modeling-tools/fintrack
-            energy-modeling-tools/minfin
-            energy-modeling-tools/nismod
-            energy-modeling-tools/pathcalc
-            energy-modeling-tools/onstove
-            energy-modeling-tools/osemosys
+            energy-modelling-tools/energy-modelling-tools.github.io
+            energy-modelling-tools/maed2
+            energy-modelling-tools/onsset
+            energy-modelling-tools/ffrm
+            energy-modelling-tools/finplan
+            energy-modelling-tools/fintrack
+            energy-modelling-tools/minfin
+            energy-modelling-tools/nismod
+            energy-modelling-tools/pathcalc
+            energy-modelling-tools/onstove
+            energy-modelling-tools/osemosys
+            energy-modelling-tools/maed
           )
 
           for repo in "${repos[@]}"; do
