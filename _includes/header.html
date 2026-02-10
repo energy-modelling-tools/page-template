@@ -14,7 +14,7 @@
 </head>
 
 <body{% if page.id %} id="{{ page.id }}"{% endif %} class="{{ page.layout }}">
-{% assign org_home = site.org_home | default: "https://energy-modeling-tools.github.io" %}
+{% assign org_home = site.org_home | default: "https://energy-modelling-tools.github.io" %}
 {% if org_home contains "://" %}
   {% assign home_href = org_home %}
 {% else %}
@@ -29,11 +29,11 @@
         <div class="header-top">
           <div class="logo-container">
             {% if site.logo %}
-            <a href="{{ home_href }}"><img class="logo py-3" src="{{ site.logo | relative_url}}" alt="{{ site.title }}"></a>
+            <a href="{{ "/" | relative_url}}"><img class="logo py-3" src="{{ site.logo | relative_url}}" alt="{{ site.title }}"></a>
             {% endif %}
           </div>
           <div class="title-container">
-            <a href="{{ home_href }}" style="font-size: 2.5em; font-weight: bold;">{{ site.title }}</a>
+            <a href="{{ "/" | relative_url}}" style="font-size: 2.5em; font-weight: bold;">{{ site.title }}</a>
           </div>
           <!-- Mobile menu toggle -->
           <div class="mobile-menu-toggle d-md-none">
@@ -44,6 +44,7 @@
             
             <!-- Mobile navigation - shown when menu is open -->
             <ul class="mobile-navigation">
+              <li><a href="{{ home_href }}">Home</a></li>
               {% include subpage_links.html %}
             </ul>
           </div>  
@@ -53,6 +54,7 @@
         <div class="navigation-container">
           <!-- Desktop navigation -->
           <ul class="d-none d-md-flex navigation-bottom">
+            <li><a href="{{ home_href }}">Home</a></li>
             {% include subpage_links.html %}
           </ul>
         </div>
