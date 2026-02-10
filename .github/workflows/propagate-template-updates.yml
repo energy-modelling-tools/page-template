@@ -55,28 +55,28 @@ jobs:
               "https://api.github.com/repos/${repo}/actions/workflows/dispatch-rebuild.yml/dispatches" \
               -d '{"ref":"main"}')
 
-            if [ "$http_code\" -eq 204 ]; then
-              echo \"workflow_dispatch OK for $repo\"
-              echo \"::endgroup::\"
+            if [ "$http_code" -eq 204 ]; then
+              echo "workflow_dispatch OK for $repo"
+              echo "::endgroup::"
               continue
             fi
 
-            echo \"workflow_dispatch HTTP $http_code, body:\"
+            echo "workflow_dispatch HTTP $http_code, body:"
             cat /tmp/resp.txt
 
-            echo \"::group::Fallback repository_dispatch to $repo\"
-            http_code2=$(curl -s -o /tmp/resp2.txt -w \"%{http_code}\" \\
-              -X POST \\
-              -H \"Authorization: Bearer ${TOKEN}\" \\
-              -H \"Accept: application/vnd.github+json\" \\
-              \"https://api.github.com/repos/${repo}/dispatches\" \\
-              -d '{\"event_type\":\"page-template-updated\"}')
+            echo "::group::Fallback repository_dispatch to $repo"
+            http_code2=$(curl -s -o /tmp/resp2.txt -w "%{http_code}" \
+              -X POST \
+              -H "Authorization: Bearer ${TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${repo}/dispatches" \
+              -d '{"event_type":"page-template-updated"}')
 
-            if [ \"$http_code2\" -ge 300 ]; then
-              echo \"Failed for $repo (HTTP $http_code2):\"
+            if [ "$http_code2" -ge 300 ]; then
+              echo "Failed for $repo (HTTP $http_code2):"
               cat /tmp/resp2.txt
               exit 1
             fi
-            echo \"repository_dispatch OK for $repo\"
-            echo \"::endgroup::\"
+            echo "repository_dispatch OK for $repo"
+            echo "::endgroup::"
           done
