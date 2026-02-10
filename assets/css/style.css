@@ -15141,7 +15141,7 @@ body {
   right: 0;
   bottom: 0;
   background-image: url("../img/gradient_background.svg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
@@ -15174,13 +15174,13 @@ body {
 .page-header .header-layout {
   position: relative;
   min-height: 100px;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 2.5rem 0;
   transition: padding-bottom 0.3s ease;
 }
 @media (max-width: 768px) {
   .page-header .header-layout {
     min-height: auto;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0 2rem 0;
   }
 }
 @media (max-width: 768px) {

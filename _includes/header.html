@@ -14,6 +14,12 @@
 </head>
 
 <body{% if page.id %} id="{{ page.id }}"{% endif %} class="{{ page.layout }}">
+{% assign org_home = site.org_home | default: "https://energy-modeling-tools.github.io" %}
+{% if org_home contains "://" %}
+  {% assign home_href = org_home %}
+{% else %}
+  {% assign home_href = org_home | relative_url %}
+{% endif %}
 
   <div class="page-header bg-white py-5 fade-in-center pt-2 pb-3">
     <div class="container-lg">
@@ -23,11 +29,11 @@
         <div class="header-top">
           <div class="logo-container">
             {% if site.logo %}
-            <a href="{{ "/" | relative_url}}"><img class="logo py-3" src="{{ site.logo | relative_url}}" alt="{{ site.title }}"></a>
+            <a href="{{ home_href }}"><img class="logo py-3" src="{{ site.logo | relative_url}}" alt="{{ site.title }}"></a>
             {% endif %}
           </div>
           <div class="title-container">
-            <a href="{{ "/" | relative_url}}" style="font-size: 2.5em; font-weight: bold;">{{ site.title }}</a>
+            <a href="{{ home_href }}" style="font-size: 2.5em; font-weight: bold;">{{ site.title }}</a>
           </div>
           <!-- Mobile menu toggle -->
           <div class="mobile-menu-toggle d-md-none">
