@@ -15145,7 +15145,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
-  opacity: 0.3; /**/
+  opacity: 1; /**/
   pointer-events: none;
   z-index: 1;
 }
