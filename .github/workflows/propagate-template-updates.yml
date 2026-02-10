@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: Generate GitHub App token
         id: app-token
-        uses: tibdex/github-app-token@v2
+        uses: actions/create-github-app-token@v1
         with:
-          app_id: ${{ secrets.PAGE_TEMPLATE_APP_ID }}
-          private_key: ${{ secrets.PAGE_TEMPLATE_APP_PRIVATE_KEY }}
-          installation_id: ${{ secrets.PAGE_TEMPLATE_APP_INSTALLATION_ID }}
+          app-id: ${{ secrets.PAGE_TEMPLATE_APP_ID }}
+          private-key: ${{ secrets.PAGE_TEMPLATE_APP_PRIVATE_KEY }}
+          owner: energy-modelling-tools
 
       - name: Trigger downstream rebuilds
         env:
