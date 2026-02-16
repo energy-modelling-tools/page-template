@@ -15191,6 +15191,42 @@ body {
   }
 }
 
+/* Standardize markdown-heavy pages without touching header styles */
+.support-page .container-lg .alt-lead,
+.sub-page .container-lg .alt-lead {
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.support-page .container-lg .alt-h3,
+.sub-page .container-lg .alt-h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.support-page .container-lg .text-justify-between,
+.sub-page .container-lg .text-justify-between {
+  text-align: justify;
+}
+
+.support-page .container-lg .btn.btn-outline-primary.sky-blue-accent,
+.sub-page .container-lg .btn.btn-outline-primary.sky-blue-accent {
+  border-color: #3490dc;
+  color: #3490dc;
+}
+
+@media (max-width: 768px) {
+  .support-page .container-lg .alt-lead,
+  .sub-page .container-lg .alt-lead {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+  .support-page .container-lg .alt-h3,
+  .sub-page .container-lg .alt-h3 {
+    font-size: 1.18rem;
+  }
+}
+
 .intro-text-dark {
   color: #1f2937 !important;
   font-weight: 500;
