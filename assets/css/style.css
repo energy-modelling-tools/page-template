@@ -15854,9 +15854,9 @@ td.does-not-support {
 }
 
 .social-icon {
-  font-size: 24px;
-  height: 24px;
-  width: 24px;
+  font-size: 32px;
+  height: 32px;
+  width: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -15865,6 +15865,26 @@ td.does-not-support {
 }
 .social-icon:hover {
   opacity: 1;
+}
+.social-link {
+  text-decoration: none !important;
+}
+.social-icon-img {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.social-icon-img:hover {
+  opacity: 1;
+}
+.page-overflow-hidden {
+  overflow: hidden;
+}
+.reference-abstract {
+  text-align: justify;
+  font-size: 0.875em;
 }
 
 .logo-hover {
