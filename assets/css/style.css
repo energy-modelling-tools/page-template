@@ -15215,6 +15215,43 @@ body {
   color: #3490dc;
 }
 
+/* Shared utility classes for markdown content blocks */
+.text-justify {
+  text-align: justify;
+}
+
+.content-text-sm {
+  font-size: 0.9em;
+}
+
+.content-text-md {
+  font-size: 0.95rem;
+}
+
+.content-text-xs {
+  font-size: 0.875em;
+}
+
+.content-max-700 {
+  max-width: 700px;
+}
+
+.content-max-720 {
+  max-width: 720px;
+}
+
+.content-max-820 {
+  max-width: 820px;
+}
+
+.content-img-sm {
+  max-width: 300px;
+}
+
+.content-img-md {
+  max-width: 500px;
+}
+
 @media (max-width: 768px) {
   .support-page .container-lg .alt-lead,
   .sub-page .container-lg .alt-lead {
