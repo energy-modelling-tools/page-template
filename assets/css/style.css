@@ -15584,6 +15584,23 @@ ul {
   overflow: hidden;
   text-align: center;
 }
+.featured-orgs a {
+  margin: 0.8rem 1rem;
+  display: inline-block;
+}
+.featured-orgs .animate-in {
+  -webkit-transition: none !important;
+  transition: none !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+  animation: none !important;
+  opacity: 1 !important;
+}
+.featured-orgs .animate-in.pre-animate {
+  opacity: 1 !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+}
 
 #filter {
   border-radius: 0;
