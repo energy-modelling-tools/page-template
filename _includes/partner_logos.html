@@ -2,38 +2,51 @@
   {% for partner in site.data.orgs.partners %}
     {% comment %}Look up partner info from library if not fully specified{% endcomment %}
     {% assign partner_info = null %}
+    {% assign found = false %}
     {% for lib_partner in site.data.partners_library.partners %}
-      {% if lib_partner.name == partner.name %}
+      {% if found == false and lib_partner.name == partner.name %}
         {% assign partner_info = lib_partner %}
-        {% break %}
+        {% assign found = true %}
       {% endif %}
     {% endfor %}
     
     {% if partner.logo %}
       {% assign partner_logo = partner.logo %}
-    {% elsif partner_info and partner_info.logo %}
-      {% assign partner_logo = partner_info.logo %}
+    {% elsif partner_info %}
+      {% if partner_info.logo %}
+        {% assign partner_logo = partner_info.logo %}
+      {% else %}
+        {% assign partner_logo = "" %}
+      {% endif %}
     {% else %}
       {% assign partner_logo = "" %}
     {% endif %}
     
     {% if partner.url %}
       {% assign partner_url = partner.url %}
-    {% elsif partner_info and partner_info.url %}
-      {% assign partner_url = partner_info.url %}
+    {% elsif partner_info %}
+      {% if partner_info.url %}
+        {% assign partner_url = partner_info.url %}
+      {% else %}
+        {% assign partner_url = "#" %}
+      {% endif %}
     {% else %}
       {% assign partner_url = "#" %}
     {% endif %}
     
     {% if partner.display_name %}
       {% assign partner_display_name = partner.display_name %}
-    {% elsif partner_info and partner_info.display_name %}
-      {% assign partner_display_name = partner_info.display_name %}
+    {% elsif partner_info %}
+      {% if partner_info.display_name %}
+        {% assign partner_display_name = partner_info.display_name %}
+      {% else %}
+        {% assign partner_display_name = partner.name %}
+      {% endif %}
     {% else %}
       {% assign partner_display_name = partner.name %}
     {% endif %}
     
-    {% if partner_logo != "" %}
+    {% if partner_logo != "" and partner_logo != null %}
     <a href="{{ partner_url }}" 
        class="animate-in" target="_blank">
       <img src="{{ partner_logo }}" 
