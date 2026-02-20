@@ -1,22 +1,32 @@
 <div class="featured-orgs text-center p-2 m-2">
   {% for partner in site.data.orgs.partners %}
-    {% comment %}Look up partner info from library if only name is provided{% endcomment %}
+    {% comment %}Look up partner info from library if not fully specified{% endcomment %}
+    {% assign partner_info = site.data.partners_library[partner.name] %}
+    
     {% if partner.logo %}
       {% assign partner_logo = partner.logo %}
-      {% assign partner_url = partner.url %}
-      {% assign partner_display_name = partner.display_name %}
+    {% elsif partner_info and partner_info.logo %}
+      {% assign partner_logo = partner_info.logo %}
     {% else %}
-      {% assign partner_info = site.data.partners_library[partner.name] %}
-      {% if partner_info %}
-        {% assign partner_logo = partner_info.logo %}
-        {% assign partner_url = partner_info.url %}
-        {% assign partner_display_name = partner_info.display_name %}
-      {% else %}
-        {% assign partner_logo = partner.logo %}
-        {% assign partner_url = partner.url %}
-        {% assign partner_display_name = partner.display_name %}
-      {% endif %}
+      {% assign partner_logo = partner.logo %}
     {% endif %}
+    
+    {% if partner.url %}
+      {% assign partner_url = partner.url %}
+    {% elsif partner_info and partner_info.url %}
+      {% assign partner_url = partner_info.url %}
+    {% else %}
+      {% assign partner_url = partner.url %}
+    {% endif %}
+    
+    {% if partner.display_name %}
+      {% assign partner_display_name = partner.display_name %}
+    {% elsif partner_info and partner_info.display_name %}
+      {% assign partner_display_name = partner_info.display_name %}
+    {% else %}
+      {% assign partner_display_name = partner.name %}
+    {% endif %}
+    
     <a href="{{ partner_url }}" 
        class="animate-in" target="_blank">
       <img src="{{ site.baseurl }}{{ partner_logo }}" 
