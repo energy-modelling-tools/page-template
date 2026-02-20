@@ -15298,6 +15298,7 @@ body {
 .page-header .container-lg {
   position: relative;
   z-index: 2;
+  max-width: 1200px;
 }
 .page-header {
   color: #24292e;
@@ -15475,9 +15476,9 @@ body {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0.3rem;
-  overflow-x: auto;
+  overflow-x: visible;
 }
 @media (max-width: 768px) {
   .page-header .navigation-bottom {
