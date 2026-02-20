@@ -15589,8 +15589,6 @@ ul {
   display: inline-block;
 }
 .featured-orgs img {
-  max-height: 80px;
-  height: auto;
   width: auto;
   max-width: 160px;
   object-fit: contain;
