@@ -1,14 +1,20 @@
 <div class="featured-orgs text-center p-2 m-2">
   {% for partner in site.data.orgs.partners %}
     {% comment %}Look up partner info from library if not fully specified{% endcomment %}
-    {% assign partner_info = site.data.partners_library[partner.name] %}
+    {% assign partner_info = null %}
+    {% for lib_partner in site.data.partners_library %}
+      {% if lib_partner[0] == partner.name %}
+        {% assign partner_info = lib_partner[1] %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
     
     {% if partner.logo %}
       {% assign partner_logo = partner.logo %}
     {% elsif partner_info and partner_info.logo %}
       {% assign partner_logo = partner_info.logo %}
     {% else %}
-      {% assign partner_logo = partner.logo %}
+      {% assign partner_logo = "" %}
     {% endif %}
     
     {% if partner.url %}
@@ -16,7 +22,7 @@
     {% elsif partner_info and partner_info.url %}
       {% assign partner_url = partner_info.url %}
     {% else %}
-      {% assign partner_url = partner.url %}
+      {% assign partner_url = "#" %}
     {% endif %}
     
     {% if partner.display_name %}
@@ -27,6 +33,7 @@
       {% assign partner_display_name = partner.name %}
     {% endif %}
     
+    {% if partner_logo != "" %}
     <a href="{{ partner_url }}" 
        class="animate-in" target="_blank">
       <img src="{{ partner_logo }}" 
@@ -35,5 +42,6 @@
            {% if partner.height %}height="{{ partner.height }}"{% else %}height="80"{% endif %}
            alt="{{ partner_display_name }}">
     </a>
+    {% endif %}
   {% endfor %}
 </div>
