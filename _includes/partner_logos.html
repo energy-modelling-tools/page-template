@@ -1,12 +1,29 @@
 <div class="featured-orgs text-center p-2 m-2">
   {% for partner in site.data.orgs.partners %}
-    <a href="{{ partner.url }}" 
+    {% comment %}Look up partner info from library if only name is provided{% endcomment %}
+    {% if partner.logo %}
+      {% assign partner_logo = partner.logo %}
+      {% assign partner_url = partner.url %}
+      {% assign partner_display_name = partner.display_name %}
+    {% else %}
+      {% assign partner_info = site.data.partners_library[partner.name] %}
+      {% if partner_info %}
+        {% assign partner_logo = partner_info.logo %}
+        {% assign partner_url = partner_info.url %}
+        {% assign partner_display_name = partner_info.display_name %}
+      {% else %}
+        {% assign partner_logo = partner.logo %}
+        {% assign partner_url = partner.url %}
+        {% assign partner_display_name = partner.display_name %}
+      {% endif %}
+    {% endif %}
+    <a href="{{ partner_url }}" 
        class="animate-in" target="_blank">
-      <img src="{{ site.baseurl }}{{ partner.logo }}" 
+      <img src="{{ site.baseurl }}{{ partner_logo }}" 
            width="auto" 
            max-width="160" 
            {% if partner.height %}height="{{ partner.height }}"{% else %}height="80"{% endif %}
-           alt="{{ partner.display_name }}">
+           alt="{{ partner_display_name }}">
     </a>
   {% endfor %}
 </div>
