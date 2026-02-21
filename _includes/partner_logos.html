@@ -42,7 +42,7 @@
     {% if partner_logo != "" %}
     <a href="{{ partner_url }}" 
        class="animate-in" target="_blank">
-      <img src="{{ partner_logo }}" 
+      <img src="{{ partner_logo | relative_url }}" 
            width="auto" 
            max-width="160" 
            {% if partner.height %}height="{{ partner.height }}"{% else %}height="80"{% endif %}
