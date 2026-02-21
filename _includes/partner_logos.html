@@ -3,7 +3,7 @@
     {% comment %}Use absolute path for theme assets, relative_url for local assets{% endcomment %}
     {% if partner.logo contains "://" %}
       {% assign logo_src = partner.logo %}
-    {% elsif partner.logo starts_with "/assets/img/partners/" %}
+    {% elsif partner.logo contains "/assets/img/partners/" %}
       {% assign logo_src = partner.logo %}
     {% else %}
       {% assign logo_src = partner.logo | relative_url %}
