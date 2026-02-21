@@ -6,7 +6,13 @@
   <meta property="og:image:alt" content="CCG" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="{{ site.logo | relative_url }}" type="image/x-icon">
+  {% if site.logo contains ".svg" %}
+    <link rel="icon" href="{{ site.logo | relative_url }}" type="image/svg+xml">
+    <link rel="shortcut icon" href="{{ site.logo | relative_url }}" type="image/svg+xml">
+  {% else %}
+    <link rel="icon" href="{{ site.logo | relative_url }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ site.logo | relative_url }}" type="image/x-icon">
+  {% endif %}
   <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css" | relative_url }}">
   <link rel="stylesheet" type="text/css" href="{{ "/assets/css/fonts.css" | relative_url }}">
   <link rel="stylesheet" type="text/css" href="{{ "/assets/vendor/bootstrap-icons/bootstrap-icons.css" | relative_url }}">
