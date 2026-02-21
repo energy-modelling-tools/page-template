@@ -1,16 +1,8 @@
 <div class="featured-orgs text-center p-2 m-2">
   {% for partner in site.data.orgs.partners %}
-    {% comment %}Use absolute path for theme assets, relative_url for local assets{% endcomment %}
-    {% if partner.logo contains "://" %}
-      {% assign logo_src = partner.logo %}
-    {% elsif partner.logo contains "/assets/img/partners/" %}
-      {% assign logo_src = partner.logo %}
-    {% else %}
-      {% assign logo_src = partner.logo | relative_url %}
-    {% endif %}
     <a href="{{ partner.url }}" 
        class="animate-in" target="_blank">
-      <img src="{{ logo_src }}" 
+      <img src="{{ partner.logo | relative_url }}" 
            width="auto" 
            max-width="160" 
            {% if partner.height %}height="{{ partner.height }}"{% else %}height="80"{% endif %}
