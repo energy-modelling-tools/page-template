@@ -1,58 +1,20 @@
 <div class="featured-orgs text-center p-2 m-2">
   {% for partner in site.data.orgs.partners %}
-    {% comment %}Look up partner info from library if not fully specified{% endcomment %}
-    {% assign partner_info = null %}
-    {% assign partner_logo = "" %}
-    {% assign partner_url = "#" %}
-    {% assign partner_display_name = partner.name %}
-    
-    {% comment %}First check if partner has explicit logo/url/display_name{% endcomment %}
-    {% if partner.logo %}
-      {% assign partner_logo = partner.logo %}
+    {% comment %}Use absolute path for theme assets, relative_url for local assets{% endcomment %}
+    {% if partner.logo contains "://" %}
+      {% assign logo_src = partner.logo %}
+    {% elsif partner.logo starts_with "/assets/img/partners/" %}
+      {% assign logo_src = partner.logo %}
+    {% else %}
+      {% assign logo_src = partner.logo | relative_url %}
     {% endif %}
-    {% if partner.url %}
-      {% assign partner_url = partner.url %}
-    {% endif %}
-    {% if partner.display_name %}
-      {% assign partner_display_name = partner.display_name %}
-    {% endif %}
-    
-    {% comment %}If no explicit logo, try to find in library{% endcomment %}
-    {% if partner_logo == "" %}
-      {% if site.data.partners_library %}
-        {% if site.data.partners_library.partners %}
-          {% for lib_partner in site.data.partners_library.partners %}
-            {% if lib_partner.name == partner.name %}
-              {% assign partner_info = lib_partner %}
-              {% if lib_partner.logo %}
-                {% assign partner_logo = lib_partner.logo %}
-              {% endif %}
-              {% if partner_url == "#" and lib_partner.url %}
-                {% assign partner_url = lib_partner.url %}
-              {% endif %}
-              {% if partner_display_name == partner.name and lib_partner.display_name %}
-                {% assign partner_display_name = lib_partner.display_name %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      {% endif %}
-    {% endif %}
-    
-    {% if partner_logo != "" %}
-    <a href="{{ partner_url }}" 
+    <a href="{{ partner.url }}" 
        class="animate-in" target="_blank">
-      {% if partner_logo contains "://" %}
-        {% assign logo_src = partner_logo %}
-      {% else %}
-        {% assign logo_src = partner_logo | relative_url %}
-      {% endif %}
       <img src="{{ logo_src }}" 
            width="auto" 
            max-width="160" 
            {% if partner.height %}height="{{ partner.height }}"{% else %}height="80"{% endif %}
-           alt="{{ partner_display_name }}">
+           alt="{{ partner.display_name }}">
     </a>
-    {% endif %}
   {% endfor %}
 </div>
