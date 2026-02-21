@@ -4,141 +4,141 @@
 
 partners:
   - name: afdb
-    logo: /assets/img/partners/logo_african_development_bank.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/logo_african_development_bank.svg
     display_name: African Development Bank
     url: https://www.afdb.org/
 
   - name: adb
-    logo: /assets/img/partners/adb_logo_and_wordmark.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/adb_logo_and_wordmark.svg
     display_name: Asian Development Bank (ADB)
     url: https://www.adb.org/
 
   - name: european-commission
-    logo: /assets/img/partners/european_commission_horizontal.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/european_commission_horizontal.svg
     display_name: European Commission
     url: https://ec.europa.eu/
 
   - name: iaea
-    logo: /assets/img/partners/iaea_slogan.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/iaea_slogan.svg
     display_name: IAEA
     url: https://www.iaea.org/
 
   - name: irena
-    logo: /assets/img/partners/irena.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/irena.svg
     display_name: IRENA
     url: https://www.irena.org/
 
   - name: kth
-    logo: /assets/img/partners/kth.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/kth.svg
     display_name: KTH Royal Institute of Technology
     url: https://www.kth.se/en
 
   - name: ncsu
-    logo: /assets/img/partners/ncsu.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/ncsu.svg
     display_name: North Carolina State University
     url: https://www.ncsu.edu/
 
   - name: psi
-    logo: /assets/img/partners/psi_paul_scherrer_institut_logo.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/psi_paul_scherrer_institut_logo.svg
     display_name: Paul Scherrer Institute
     url: https://www.psi.ch/
 
   - name: sei
-    logo: /assets/img/partners/sei.png
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/sei.png
     display_name: Stockholm Environment Institute
     url: https://www.sei.org/
 
   - name: sfu
-    logo: /assets/img/partners/sfu.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/sfu.svg
     display_name: Simon Fraser University
     url: https://www.sfu.ca/
 
   - name: stanford
-    logo: /assets/img/partners/stanford_university_logo.png
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/stanford_university_logo.png
     display_name: Stanford University
     url: https://www.stanford.edu/
 
   - name: ucl
-    logo: /assets/img/partners/ucl_new_logo.png
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/ucl_new_logo.png
     display_name: University College London
     url: https://www.ucl.ac.uk/
 
   - name: uct
-    logo: /assets/img/partners/uct.png
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/uct.png
     display_name: University of Cape Town
     url: https://www.uct.ac.za/
 
   - name: undesa
-    logo: /assets/img/partners/undesa.png
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/undesa.png
     display_name: UN DESA
     url: https://un-modelling.github.io/modelling-tools/
 
   - name: unido
-    logo: /assets/img/partners/unido.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/unido.svg
     display_name: UNIDO
     url: https://www.unido.org/
 
   - name: worldbank
-    logo: /assets/img/partners/world_bank_group_logo_vector_2021.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/world_bank_group_logo_vector_2021.svg
     display_name: World Bank Group
     url: https://www.worldbank.org/
 
   - name: wwf
-    logo: /assets/img/partners/wwf.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/wwf.svg
     display_name: World Wildlife Fund
     url: https://www.worldwildlife.org/
 
   - name: ccg
-    logo: /assets/img/partners/ccg.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/ccg.svg
     display_name: Climate Compatible Growth (CCG)
     url: https://climatecompatiblegrowth.com/
 
   - name: icl
-    logo: /assets/img/partners/imperial_logo_rgb_blue_2024.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/imperial_logo_rgb_blue_2024.svg
     display_name: Imperial College London
     url: https://www.imperial.ac.uk/
 
   - name: lu
-    logo: /assets/img/partners/loughborough_university.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/loughborough_university.svg
     display_name: Loughborough University
     url: https://www.lboro.ac.uk/
 
   - name: oxford
-    logo: /assets/img/partners/university_of_oxford_rectangle.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/university_of_oxford_rectangle.svg
     display_name: University of Oxford
     url: https://www.ox.ac.uk/
 
   - name: desnz
-    logo: /assets/img/partners/department_for_energy_security_and_net_zero_logo.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/department_for_energy_security_and_net_zero_logo.svg
     display_name: Department for Energy Security and Net Zero (DESNZ)
     url: https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero
 
   - name: seforall
-    logo: /assets/img/partners/sustainable_energy_for_all_seforall_logo_vector.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/sustainable_energy_for_all_seforall_logo_vector.svg
     display_name: Sustainable Energy for All (SEforALL)
     url: https://www.seforall.org/
 
   - name: esmap
-    logo: /assets/img/partners/esmap_logo_2023_blue.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/esmap_logo_2023_blue.svg
     display_name: ESMAP
     url: https://www.esmap.org/
 
   - name: mecs
-    logo: /assets/img/partners/mecs.svg
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/mecs.svg
     display_name: MECS
     url: https://mecs.org.uk/
 
   - name: itrc
-    logo: /assets/img/partners/itrc_infrastructure_transitions_research_consortium.png
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/itrc_infrastructure_transitions_research_consortium.png
     display_name: ITRC
     url: https://www.itrc.org.uk/
 
   - name: opsis
-    logo: /assets/img/partners/opsis+oxford_rgb.png
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/opsis+oxford_rgb.png
     display_name: Oxford Programme for Sustainable Infrastructure Systems (OPSIS)
     url: https://opsis.eci.ox.ac.uk/
 
   - name: cca
-    logo: /assets/img/partners/cca.png
+    logo: https://raw.githubusercontent.com/energy-modelling-tools/energy-modelling-tools.github.io/main/assets/img/partners/cca.png
     display_name: CCA
     url: ""
