@@ -36,6 +36,7 @@ jobs:
             energy-modelling-tools/maed2
             energy-modelling-tools/onsset
             energy-modelling-tools/ffrm
+            energy-modelling-tools/clews
             energy-modelling-tools/finplan
             energy-modelling-tools/fintrack
             energy-modelling-tools/minfin
